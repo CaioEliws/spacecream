@@ -1,0 +1,166 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --ff-heading: 'Staatliches', cursive;
+    --ff-texting: 'Roboto', sans-serif;
+    --ff-footer: 'Open Sans', sans-serif;
+
+    --fc-primary: hsl(232, 17%, 35%);
+    --fc-secondary: hsl(218, 17%, 62%);
+    --fc-terciary: hsl(275, 18%, 79%);
+    --fc-body: hsl(0, 0%, 100%);
+
+    font-size: 62.5%;
+    --fs-body: 2rem;
+}
+
+body {
+    height: 100vh;
+}
+
+.page {
+    display: flex;
+    flex-direction: row;
+
+    animation: topdown 700ms 350ms backwards;
+}
+
+.page1 {
+    width: 56rem;
+    background-color: var(--fc-secondary);
+    
+    align-items: center;
+    padding: 3.2rem 0;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+
+    color: var(--fc-body);
+}
+
+.page1 h1 {
+    margin: 5rem 0 3rem;
+    font-size: 4.8rem;
+    font-family: var(--ff-heading);
+    background-color: var(--fc-terciary);
+    text-align: center;
+
+    width: 100%;
+    white-space: nowrap;
+}
+
+.page1 p {
+    font-size: var(--fs-body);
+    font-family: var(--ff-texting);
+    text-align: center;
+
+    padding: 3rem 5rem;
+}
+
+.page2 {
+    padding: 6rem 10rem;
+
+    width: 100%;
+
+    padding-bottom: 0;
+}
+
+.card {
+    position: relative;
+}
+
+.card img {
+    object-fit: cover;
+    width: 100%;
+}
+
+.card img:hover {
+    transform: scale(1.1);
+
+    transition: all 200ms;
+}
+
+main {
+    display: grid;
+    gap: 3.2rem;    
+
+    grid-template-areas:
+    "A B C"
+    "D B F"
+    "D B F"
+    "D E F" ;
+}
+
+main div:nth-child(1) {
+    grid-area: A;
+}
+
+main div:nth-child(2) {
+    grid-area: B;
+  }
+
+main div:nth-child(3) {
+    grid-area: C;
+}
+
+main div:nth-child(4) {
+    grid-area: D;
+}
+
+main div:nth-child(5) {
+    grid-area: E;
+}
+
+main div:nth-child(6) {
+    grid-area: F;
+}
+
+footer p {
+    font-size: var(--fs-body);
+    font-family: var(--ff-footer);
+    color: var(--fc-primary);
+    text-align: center;
+
+    margin-top: 5rem;
+}
+
+@keyframes topdown {
+    0% {
+        opacity: 0;
+        transform: translateY(-15);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 950px) {
+    .page1 {
+        width: 100%;
+        padding-bottom: 4rem;
+    }
+
+    .page {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .page2 {
+        padding: 4rem 2rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .page2 main {
+        display: flex;
+        flex-direction: column;
+
+        padding: 0 5rem;
+    }
+}
